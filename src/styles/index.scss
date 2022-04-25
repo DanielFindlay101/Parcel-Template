@@ -20,9 +20,23 @@ body {
         text-align: center;
     }
 
-    p {
+    a {
         font-size: 2rem;
         color: saddlebrown;
         margin-bottom: 20px;
+    }
+
+    button {
+        width: auto;
+        color: saddlebrown;
+        background-color: #e2e2e2;
+        border-radius: 10px;
+        border-style: none;
+        border: 3px solid $text-color;
+        
+        &:hover {
+            background-color: hsl(0, 69%, 17%);
+            color: #e2e2e2;
+        }
     }
 }
