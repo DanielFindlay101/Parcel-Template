@@ -1,9 +1,8 @@
-import React from 'react'
-import { useState} from 'react'
-
+import * as React from 'react'
+import { useState } from 'react'
 
 export default function App() {
-    const [counter, setCounter] = useState(0)
+  const [counter, setCounter] = useState<number>(0)
 
   return (
     <div>
