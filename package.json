@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/pages/*.html",
-    "build": "tsc --noEmit && parcel build src/pages/*.html"
+    "start": "parcel public/*.html",
+    "build": "tsc --noEmit && parcel build public/*.html"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
+    "@types/node": "^17.0.27",
     "@types/react": "^18.0.7",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
