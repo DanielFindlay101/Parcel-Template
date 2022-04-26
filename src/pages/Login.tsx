@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import BigLogo from '../images/biglogo.png'
+// import BigLogo from '../images/biglogo.png'
+const BigLogo = require('../images/biglogo.png')
 
 export default function Login() {
    const [email, setEmail] = useState<string>("")     
