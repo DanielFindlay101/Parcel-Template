@@ -1,42 +1,34 @@
+@import 'login';
+
+
 :root {
-    --mainBg: bisque;
+    --mainBg: hsl(244, 60%, 64%);
 }
 
+$bg-image: url('../images/background2.png');
 $text-color: chocolate;
 
 body {
     margin: 0;
     height: 100vh;
     font-family: sans-serif;
-    background: var(--mainBg);
-    color: $text-color;
+    background: $bg-image;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-    h1 {
-        font-size: 4rem;
-        text-align: center;
-    }
+a {
+    color: rgb(53, 67, 160);
+    text-decoration: none;
+    background-color: transparent;
+    margin-inline: 0.5rem;
+}
 
-    a {
-        font-size: 2rem;
-        color: saddlebrown;
-        margin-bottom: 20px;
-    }
-
-    button {
-        width: auto;
-        color: saddlebrown;
-        background-color: #e2e2e2;
-        border-radius: 10px;
-        border-style: none;
-        border: 3px solid $text-color;
-        
-        &:hover {
-            background-color: hsl(0, 69%, 17%);
-            color: #e2e2e2;
-        }
-    }
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: black;
 }

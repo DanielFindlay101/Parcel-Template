@@ -1,0 +1,45 @@
+.form_styles {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #dfe1e6;
+    min-width: 30rem;
+    min-height: 16rem;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: hsl(232, 50%, 42%);
+    color: white;
+    border-radius: 6px;
+    padding-inline: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1.17rem;
+    line-height: 1.5;
+    border: 1px solid transparent;
+
+    &:hover {
+        background-color: hsl(232, 50%, 55%);
+        transition: 0.2s;
+    }
+}
+
+.input-box {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 1px 2px;
+    background-color: rgb(234, 234, 240);
+    color: rgb(146, 146, 149);
+    border-radius: 5px;
+    padding-inline: 1.4rem;
+    padding-top: 4px;
+    margin-bottom: 1rem;
+    width: 100%;
+    min-height: 42px;
+    border: 3px solid transparent;
+}
