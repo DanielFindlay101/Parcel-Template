@@ -1,13 +1,20 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
+
+import Login from './pages/Login';
+import DashBoard from './pages/DashBoard';
 
 export default function App() {
-  const [counter, setCounter] = useState<number>(0)
+  
 
   return (
     <div>
-        <p>The count is at {counter}</p>
-        <button onClick= {() => setCounter(counter + 1)}>Press to increase</button>
+      <Router>
+          <Routes>
+            <Route path ="/" element={<Login />}/>
+            <Route path ="/dashboard" element={<DashBoard />}/>
+          </Routes>
+      </Router>
     </div>
   )
 }
