@@ -1,3 +1,6 @@
+$breakpoint-mobile: 415px;
+
+
 .form_styles {
     background-color: white;
     padding: 2rem;
@@ -9,6 +12,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: $breakpoint-mobile) {
+        min-width: auto;
+    }
 }
 
 .btn {

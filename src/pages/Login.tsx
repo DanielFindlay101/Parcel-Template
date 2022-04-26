@@ -7,6 +7,8 @@ export default function Login() {
 
     const handleSubmit = (e):void => {
         e.preventDefault
+        console.log(email, password);
+        
     }
 
   return (
