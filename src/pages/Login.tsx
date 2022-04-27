@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 // import BigLogo from '../images/biglogo.png'
 const BigLogo = require('../images/biglogo.png')
@@ -8,10 +8,12 @@ const BigLogo = require('../images/biglogo.png')
 export default function Login() {
    const [email, setEmail] = useState<string>("")     
    const [password, setPassword] = useState<string>("")
+   const navigate = useNavigate()
 
     const handleSubmit = (e):void => {
         e.preventDefault
-        console.log(email, password);
+        console.log(email, password);   
+        navigate('/dashboard')
     }
 
   return (
