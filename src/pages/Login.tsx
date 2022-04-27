@@ -18,7 +18,8 @@ export default function Login() {
 
   return (
     <React.Fragment>
-     <div className='form_layout'>
+    <div className="page-layout">
+      <div className='form_layout'>
         <img src = {BigLogo} className="logo" />
             <form className='form_styles' onSubmit={handleSubmit}>
                 <h1>login</h1>
@@ -44,6 +45,7 @@ export default function Login() {
                 </div>
             </form>
         </div>
+    </div>
     </React.Fragment>
   )
 }
