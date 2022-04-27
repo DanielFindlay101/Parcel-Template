@@ -1,0 +1,14 @@
+.side-nav-container {
+    background-color: #e9ecef;
+    border-color: #d0d1d4;
+    width: 84px;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 84px;
+    z-index: 1;
+    overflow: hidden;
+}
+
