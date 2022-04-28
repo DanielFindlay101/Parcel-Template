@@ -51,8 +51,3 @@ export default function DashBoard() {
     </div>
   )
 }
-
-
-//App layout
-//Nav
-//Content

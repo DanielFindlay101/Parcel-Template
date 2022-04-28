@@ -9,6 +9,7 @@
 
     .header-logo {
         padding: 0.8rem;
+        padding-left: 24px;
     }
 
     .header-link-container {
@@ -19,14 +20,26 @@
     }
 
     .header-link {
-        // height: 100%;
-        // width: 100%;
         margin-inline: 2rem;
         color: white;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-        // &:hover {
-        //     background-color: #e2e2e2;
-        // }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .header-button {
+        cursor: pointer;
+        background-color: #e2e2e2;
+        height: 100%;
+        border-radius: 5px;
+        border: #30316b;
+
+
+        &:hover {
+            background-color: hsl(239, 33%, 55%);
+            color: white;
+        } 
     }
 }
