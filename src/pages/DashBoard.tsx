@@ -12,12 +12,9 @@ export default function DashBoard() {
           <div className='sidebar-nav'>
               <Sidebar />
           </div>
-            {/* <aside></aside> */}
-        
+       
           <div className='content-section'>
               <h2 className='content-section-title'>Dashboard</h2>
-
-              <hr className='line-break' />
 
                 <div className="scroll-section">
                     <div className='new-list-area'>
