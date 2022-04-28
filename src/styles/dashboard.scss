@@ -1,41 +1,44 @@
 .app-layout {
-    height: 100%;
+    height: calc(100% - 60px);
     display: flex;
 }
 
-.content-section {
-    height: 100%;
-    width: 100%;
+.content-section { 
+    max-width: 100%;
+    flex-grow: 1;
+    overflow-x: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    z-index: 4;
+    box-shadow: -4px 12px 8px 8px rgb(201 201 204 / 40%);
     background-color: rgb(245, 245, 245);
-    
-    
-    
-    .content-section-title {
-        width: 100%;
-        height: 69px;
-        border-bottom: 2px solid rgb(245, 245, 245);
-        padding-top: 22px;
-        padding-left: 18px;
-        display: inline-flex
-    }
 }
 
-.line-break {
-    background-color: #e9ecef;
-    height: 2px;
-    border: none;
+.content-header-area {
+    width: 100%;
+    height: 69x;
+    height: 69px;
+    border-bottom: 2px soild rgb(224, 224, 224);
+    border-bottom: 2px solid rgb(224, 224, 224);
+    background-color: rgb(245, 245, 245);
+    padding-top: 0px;
+    padding-left: 18px;
+    padding-right: 18px;
+    display: inline-flex;
+}
+
+.scroll {
+    //background-color: hsl(0, 79%, 92%);
+    padding: 1rem 1rem 9rem;
+    width: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
 }
 
 .new-list-area {
-    //padding: 2.2rem 1rem;
+    background-color: rgb(243, 243, 243);
+    padding: 1.5rem 1.7rem;
     height: fit-content;
-}
-
-.scroll-section {
-    padding: 1rem 1rem 9rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 100%;
-    max-height: 100%;
-    margin: 0px;
 }
