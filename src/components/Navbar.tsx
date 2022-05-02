@@ -6,16 +6,15 @@ import Modal from './Modal'
 
 const darkLogo = require('../images/dark.png')
 
-export default function Navbar() {
+export default () => {
   const [modal,setModal] = useState<boolean>(false)
   const navigate = useNavigate()
 
   const handleClick = () => {
     navigate('/')
-}
+  }
 
-  return (
-  <React.Fragment>
+  return <React.Fragment>
       <div className='header-area'>
           <img src={darkLogo} alt="fixy-logo" className='header-logo'/>
           <ul className='header-link-container'>
@@ -27,5 +26,4 @@ export default function Navbar() {
       </div>
     {modal && <Modal handleClick={handleClick}/>}
   </React.Fragment>
-  )
 } 
