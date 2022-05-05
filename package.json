@@ -20,6 +20,7 @@
     "@types/react": "^18.0.7",
     "init": "^0.1.2",
     "lit": "^2.2.3",
+    "preact": "^10.7.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"
