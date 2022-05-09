@@ -1,6 +1,6 @@
 import { css } from 'lit'
 
-export const detectStyles = css`
+export const startScreenStyles = css`
  .main-container{
     background-color: #bbb;
     font-size: 2rem;

@@ -1,1 +1,1 @@
-import '../src/LitComponents/detectStartScreen'
+import '../src/LitComponents/mainScreen'
