@@ -11,4 +11,14 @@ export const mainScreenStyles = css`
     flex-direction: column;
     align-items: center;
   }
+ .topbar-styles {
+   display: flex;
+   width: 80%;
+   justify-content: center;
+ }
+ .bottombar-styles {
+   display: flex;
+   width: 80%;
+   justify-content: center;
+  }
 `

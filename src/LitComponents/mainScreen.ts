@@ -5,13 +5,12 @@ import './topBar'
 import './bottomBar'
 @customElement('fixzy-detect')
 export class MainScreen extends LitElement {
-    static styles = mainScreenStyles
-
+  static styles = mainScreenStyles
     render() {
      return html`
       <div class="screen-container">
-        <top-bar></top-bar>
-        <bottom-bar></bottom-bar>
+        <top-bar class="topbar-styles"></top-bar>
+        <bottom-bar class="bottombar-styles"></bottom-bar>
       </div>
      `
     }

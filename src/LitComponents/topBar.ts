@@ -1,26 +1,24 @@
 import {LitElement, html} from 'lit';
 import {customElement, property, query} from 'lit/decorators.js';
-import { start } from 'repl';
 import { topBarStyles } from './ComponentStyles/topBarStyles';
 
 @customElement('top-bar')
 export class TopBar extends LitElement {
   static styles = topBarStyles
-
   
   @query('#seconds')
-  seconds: HTMLSpanElement
+  seconds: number
 
   @query('#minutes')
-  minutes: HTMLSpanElement
+  minutes: number
 
   @query('#hours')
-  hours: HTMLSpanElement
+  hours: number
 
     render() {
      return html`
       <div class="top-bar-container">
-        <h2 class="title" @click=${this.startTimer}>demos@fixy.co.uk</h2>
+        <h2 class="title">demos@fixy.co.uk</h2>
         <p class="timer">
           <span id="hours">00</span>
           <span id="minutes">00</span>
