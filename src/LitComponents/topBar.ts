@@ -1,32 +1,20 @@
 import {LitElement, html} from 'lit';
-import {customElement, property, query} from 'lit/decorators.js';
+import {customElement} from 'lit/decorators.js';
+import { ClockController } from './clock-controller';
 import { topBarStyles } from './ComponentStyles/topBarStyles';
 
 @customElement('top-bar')
 export class TopBar extends LitElement {
   static styles = topBarStyles
+  private clock = new ClockController(this)
   
-  @query('#seconds')
-  seconds: number
-
-  @query('#minutes')
-  minutes: number
-
-  @query('#hours')
-  hours: number
-
     render() {
+     const elapsedTime=(this.clock.value) 
      return html`
       <div class="top-bar-container">
         <h2 class="title">demos@fixy.co.uk</h2>
-        <p class="timer">
-          <span id="hours">00</span>
-          <span id="minutes">00</span>
-          <span id="seconds">00</span>
-        </p>
+        <span class="timer">${elapsedTime}</span>
       </div>
      `
-   }
-    startTimer() {
     }
   }
