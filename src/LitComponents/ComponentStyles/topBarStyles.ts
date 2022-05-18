@@ -8,6 +8,7 @@ export const topBarStyles = css`
         border-radius: 25px;
         color: white;
         margin-top: 2rem;
+        z-index: 100;
     }
     .title {
         padding-left: 20px;

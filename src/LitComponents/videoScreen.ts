@@ -29,12 +29,12 @@ export class VideoScreen extends LitElement {
       <video id="video" width="" height="" autoplay></video>
       <!-- <canvas id="canvas" width="640px" height="480px"></canvas> -->
     `
-   }
-    _takePhoto() {
-      const ctx = this.canvas.getContext('2d')
-      ctx?.drawImage(this.video, 0, 0, 640, 480)
-   }
-  }
+ }
+ _takePhoto() {
+  const ctx = this.canvas.getContext('2d')
+  ctx?.drawImage(this.video, 0, 0, 640, 480)
+ }
+}
 
 
 

@@ -10,6 +10,7 @@ export const mainScreenStyles = css`
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
  .topbar-styles {
    display: flex;

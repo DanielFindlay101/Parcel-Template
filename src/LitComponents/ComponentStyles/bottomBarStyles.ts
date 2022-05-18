@@ -11,7 +11,7 @@ export const bottomBarStyles = css`
    margin-bottom: 2rem;
    display: inline-flex;
    justify-content: center;
-   /* z-index: 10; */
+   z-index: 100;
   }
  .btn-snap {
    background-color: #df4753;
