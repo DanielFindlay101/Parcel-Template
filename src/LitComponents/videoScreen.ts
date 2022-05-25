@@ -1,5 +1,5 @@
-import {LitElement, html, PropertyValues} from 'lit';
-import {customElement, query, property} from 'lit/decorators.js';
+import { LitElement, html } from 'lit';
+import { customElement, query } from 'lit/decorators.js';
 import { videoScreenStyles } from './ComponentStyles/videoScreenStyles';
 import './bottomBar'
 

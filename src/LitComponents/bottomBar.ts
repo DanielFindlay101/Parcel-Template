@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement, property,state } from 'lit/decorators.js';
 import { bottomBarStyles } from './ComponentStyles/bottomBarStyles';
 import './videoScreen'
 
@@ -9,30 +9,25 @@ export class BottomBar extends LitElement {
 
   @property()
   hasClicked: boolean = false
+  
 
   protected render() {
     return html`
       <div class="bottom-bar-container">
         <button class="btn-outline"></button>
-        <button class="btn-snap"
-          @click="${() => {
-              window.dispatchEvent(new CustomEvent('photo-event'))
-            }}"
-            @click=${() => this._toggleClicked}>
-            Snap
+        <button class="btn-snap" @click=${this._togglePhoto}>
+            ${this.hasClicked ? html `CLOSE` : html `SNAP`}
         </button>
         <button class="btn-outline"></button>
       </div>
     `
   }
 
-  private dispatcher() {
-    
-  }
-
-  private _toggleClicked(){
-    console.log(this.hasClicked)
+  private _togglePhoto(){
+    window.dispatchEvent(new CustomEvent('photo-event'))
     this.hasClicked = !this.hasClicked
-    this.requestUpdate()
+    if(!this.hasClicked){
+      window.dispatchEvent(new CustomEvent('clear-event'))
+    }
   }
 }
