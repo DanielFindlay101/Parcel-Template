@@ -19,30 +19,26 @@ export class VideoScreen extends LitElement {
  video: HTMLVideoElement
 
  @state()
- hasPhoto: boolean 
+ hasPhoto: boolean
 
  createPhotoEvent: any
  clearPhotoEvent: any
  
-connectedCallback(): void {
+ connectedCallback(): void {
   super.connectedCallback()
   this.createPhotoEvent = this._takePhoto.bind(this)
   this.clearPhotoEvent = this._clearPhoto.bind(this)
   window.addEventListener('photo-event', this.createPhotoEvent)
   window.addEventListener('clear-event', this.clearPhotoEvent)
-}
-disconnectedCallback(): void {
+ }
+ disconnectedCallback(): void {
   window.removeEventListener('photo-event', this.createPhotoEvent)
   window.removeEventListener('clear-event', this.clearPhotoEvent)
   super.disconnectedCallback()
-}
-
-shouldUpdate(changedProperties: PropertyValues<this>): boolean {
-  return !(changedProperties.size === 1 && changedProperties.has("canvas"));
-}
+ }
 
  render() {  
-
+  console.log(this.hasPhoto);
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
       this.video.srcObject = stream
@@ -52,18 +48,18 @@ shouldUpdate(changedProperties: PropertyValues<this>): boolean {
 
   return html`
       <video id="video" width="20px" height="20px" autoplay></video>
-       ${this.hasPhoto ? html `
-          <div class="error-container">
-            ${map(this.returnedData, (actualData) => 
-              html`
-                <span class="detect-pill">${actualData}</span>
-              `
-            )}
-          </div>
-          ` : "" }
       <canvas id="canvas"></canvas>
+      ${this.hasPhoto ? html `
+        <div class= "error-container">
+          ${map(this.returnedData, (actualData) => 
+            html`
+             <span class="detect-pill">${actualData}</span>
+            `
+          )}
+        </div>
+      ` : "" }
     `
-  }
+ }
 
  private _takePhoto() {
   const API_URL = 'https://emdev.smartenapps.com/defect-content/index.php'
@@ -90,9 +86,11 @@ shouldUpdate(changedProperties: PropertyValues<this>): boolean {
   }  
   
  private _clearPhoto() {
+  this.hasPhoto = !this.hasPhoto
+  if(!this.hasPhoto){
   const ctx = this.canvas?.getContext('2d')
   ctx?.clearRect(0, 0, this.canvas.width, this.canvas.height)
-  this.hasPhoto = !this.hasPhoto
+  }
  } 
 }
 
