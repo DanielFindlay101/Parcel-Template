@@ -51,6 +51,7 @@ export const videoScreenStyles = css`
   position: absolute;
   width: 100%;
   height: 30%;
+  z-index: 99;
 }
 .detect-pill {
   background-color: rgb(65, 65, 91);
