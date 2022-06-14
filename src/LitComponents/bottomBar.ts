@@ -26,7 +26,7 @@ export class BottomBar extends LitElement {
   private _togglePhoto(){
     this.hasClicked = !this.hasClicked
     if(!this.hasClicked){
-      window.dispatchEvent(new CustomEvent('clear-event'))
+     window.dispatchEvent(new CustomEvent('clear-event'))
     } else {
       window.dispatchEvent(new CustomEvent('photo-event'))
     }

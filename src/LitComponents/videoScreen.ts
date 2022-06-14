@@ -38,7 +38,7 @@ export class VideoScreen extends LitElement {
  }
 
  render() {  
-  console.log(this.hasPhoto);
+  // console.log(this.returnedData);
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
       this.video.srcObject = stream
@@ -46,8 +46,8 @@ export class VideoScreen extends LitElement {
     })
   }
 
-  return html`
-      <video id="video" width="20px" height="20px" autoplay></video>
+  return html` 
+ 
       <canvas id="canvas"></canvas>
       ${this.hasPhoto ? html `
         <div class= "error-container">
@@ -57,11 +57,14 @@ export class VideoScreen extends LitElement {
             `
           )}
         </div>
-      ` : "" }
-    `
- }
+      ` : html`
+         <video id="video" width="20px" height="20px" autoplay></video>
+      `}
+      ` 
+   }
 
  private _takePhoto() {
+  this.hasPhoto = !this.hasPhoto
   const API_URL = 'https://emdev.smartenapps.com/defect-content/index.php'
   const ctx = this.canvas?.getContext('2d')
   ctx.canvas.width = 400;
@@ -78,19 +81,16 @@ export class VideoScreen extends LitElement {
     .then(response => response.text())
     .then(data => {  
       this.returnedData = data.replace(/[^A-Za-z*]/g, ' ').split("*")
-      this.hasPhoto = !this.hasPhoto
-      // console.log(this.returnedData);
       })
     .catch(error => console.log(error))
     }, 'image/jpeg')
-  }  
+  }   
   
  private _clearPhoto() {
   this.hasPhoto = !this.hasPhoto
-  if(!this.hasPhoto){
   const ctx = this.canvas?.getContext('2d')
   ctx?.clearRect(0, 0, this.canvas.width, this.canvas.height)
-  }
+  this.returnedData = ""
  } 
 }
 
