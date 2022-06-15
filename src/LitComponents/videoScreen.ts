@@ -81,6 +81,7 @@ export class VideoScreen extends LitElement {
     .then(response => response.text())
     .then(data => {  
       this.returnedData = data.replace(/[^A-Za-z*]/g, ' ').split("*")
+      console.log(this.returnedData);
       })
     .catch(error => console.log(error))
     }, 'image/jpeg')
