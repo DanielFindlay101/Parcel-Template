@@ -11,6 +11,9 @@ export class VideoScreen extends LitElement {
   
  @property()
  returnedData: any 
+
+ @property()
+ dataCoordinates: any
  
  @query('#canvas')
  canvas!: HTMLCanvasElement
@@ -79,8 +82,10 @@ export class VideoScreen extends LitElement {
       body: formData
     }) 
     .then(response => response.text())
-    .then(data => {  
-      this.returnedData = data.replace(/[^A-Za-z*]/g, ' ').split("*")
+    .then(data => { 
+      this.dataCoordinates = data.replace(/[^0-9,.]/g, '').split(",").slice(0, 4)
+      this.returnedData = data.replace(/[^A-Za-z*]/g, '').split("*")
+      console.log(this.dataCoordinates)
       console.log(this.returnedData);
       })
     .catch(error => console.log(error))
