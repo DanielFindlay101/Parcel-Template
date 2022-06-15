@@ -23,6 +23,15 @@ export const videoScreenStyles = css`
     background-size: cover;
     overflow: hidden;
     }
+#box {
+  /* width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 100px;
+  left: 40px; */
+  background-color: red;
+  z-index: 1;
+}
 .user-container {
   z-index: 99;
 }

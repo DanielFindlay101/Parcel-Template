@@ -21,6 +21,9 @@ export class VideoScreen extends LitElement {
  @query('#video')
  video: HTMLVideoElement
 
+ @query('#box')
+ box: HTMLDivElement
+
  @state()
  hasPhoto: boolean
 
@@ -41,7 +44,11 @@ export class VideoScreen extends LitElement {
  }
 
  render() {  
-  // console.log(this.returnedData);
+
+  // this.box.style.position = "absolute"
+  // this.box.style.left = this.dataCoordinates[0]
+  // this.box.style.right = this.dataCoordinates[1]
+
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
       this.video.srcObject = stream
@@ -50,7 +57,7 @@ export class VideoScreen extends LitElement {
   }
 
   return html` 
- 
+      <div id="box"></div>
       <canvas id="canvas"></canvas>
       ${this.hasPhoto ? html `
         <div class= "error-container">
@@ -86,7 +93,11 @@ export class VideoScreen extends LitElement {
       this.dataCoordinates = data.replace(/[^0-9,.]/g, '').split(",").slice(0, 4)
       this.returnedData = data.replace(/[^A-Za-z*]/g, '').split("*")
       console.log(this.dataCoordinates)
-      console.log(this.returnedData);
+      ctx.beginPath();
+      ctx.rect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
+         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
+          this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
+      ctx.stroke();
       })
     .catch(error => console.log(error))
     }, 'image/jpeg')
