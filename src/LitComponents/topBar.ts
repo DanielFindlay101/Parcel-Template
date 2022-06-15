@@ -12,7 +12,7 @@ export class TopBar extends LitElement {
      const elapsedTime=(this.clock.value) 
      return html`
       <div class="top-bar-container">
-        <h2 class="title">demos@fixzy.co.uk</h2>
+        <h2 class="title">Fixzy Detect App</h2>
         <span class="timer">${elapsedTime}</span>
       </div>
      `
