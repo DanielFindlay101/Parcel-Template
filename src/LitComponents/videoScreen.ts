@@ -45,10 +45,6 @@ export class VideoScreen extends LitElement {
 
  render() {  
 
-  // this.box.style.position = "absolute"
-  // this.box.style.left = this.dataCoordinates[0]
-  // this.box.style.right = this.dataCoordinates[1]
-
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
       this.video.srcObject = stream
@@ -63,7 +59,7 @@ export class VideoScreen extends LitElement {
         <div class= "error-container">
           ${map(this.returnedData, (actualData) => 
             html`
-             <span class="detect-pill">${actualData}</span>
+             <span class="detect-pill">${actualData} Detected</span>
             `
           )}
         </div>
