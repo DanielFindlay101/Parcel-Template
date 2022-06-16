@@ -4,6 +4,7 @@ import { map } from 'lit/directives/map.js'
 import { videoScreenStyles } from './ComponentStyles/videoScreenStyles';
 import './bottomBar'
 
+
 @customElement('video-screen')
 export class VideoScreen extends LitElement {
 
