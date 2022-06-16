@@ -1,4 +1,4 @@
-import { LitElement, html, PropertyValues } from 'lit';
+import { LitElement, html } from 'lit';
 import { customElement, query, property, state } from 'lit/decorators.js';
 import { map } from 'lit/directives/map.js'
 import { videoScreenStyles } from './ComponentStyles/videoScreenStyles';
@@ -45,10 +45,6 @@ export class VideoScreen extends LitElement {
 
  render() {  
 
-  // this.box.style.position = "absolute"
-  // this.box.style.left = this.dataCoordinates[0]
-  // this.box.style.right = this.dataCoordinates[1]
-
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
       this.video.srcObject = stream
@@ -63,7 +59,7 @@ export class VideoScreen extends LitElement {
         <div class= "error-container">
           ${map(this.returnedData, (actualData) => 
             html`
-             <span class="detect-pill">${actualData}</span>
+             <span class="detect-pill">${actualData} Detected</span>
             `
           )}
         </div>
@@ -95,8 +91,8 @@ export class VideoScreen extends LitElement {
       console.log(this.dataCoordinates)
       ctx.beginPath();
       ctx.rect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
-         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
-          this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
+        this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
+        this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
       ctx.stroke();
       })
     .catch(error => console.log(error))
