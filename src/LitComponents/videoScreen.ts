@@ -75,8 +75,8 @@ export class VideoScreen extends LitElement {
   this.hasPhoto = !this.hasPhoto
   const API_URL = 'https://emdev.smartenapps.com/defect-content/index.php'
   const ctx = this.canvas?.getContext('2d')
-  ctx.canvas.width = 400;
-  ctx.canvas.height = 300; 
+  ctx.canvas.width = 300;
+  ctx.canvas.height = 200; 
   ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height)
   
   this.canvas.toBlob((blob) => {
