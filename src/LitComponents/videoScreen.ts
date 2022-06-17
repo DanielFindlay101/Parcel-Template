@@ -47,7 +47,9 @@ export class VideoScreen extends LitElement {
  render() {  
 
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({video: { facingMode: { exact: "environment"}}})
+    navigator.mediaDevices.getUserMedia({video: {
+      width: { ideal: 320 },
+      facingMode: { exact: "environment"}}})
     .then(stream => {
       this.video.srcObject = stream
       this.video.play()
@@ -66,7 +68,7 @@ export class VideoScreen extends LitElement {
           )}
         </div>
       ` : html`
-         <video id="video" width="200px" height="200px" autoplay></video>
+         <video id="video" autoplay></video>
       `}
       ` 
    }
