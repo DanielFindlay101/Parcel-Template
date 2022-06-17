@@ -66,7 +66,7 @@ export class VideoScreen extends LitElement {
           )}
         </div>
       ` : html`
-         <video id="video" width="20px" height="20px" autoplay></video>
+         <video id="video" width="200px" height="200px" autoplay></video>
       `}
       ` 
    }
