@@ -65,7 +65,7 @@ export class VideoScreen extends LitElement {
   }
 
   return html` 
-      <div id="box"></div>
+      <video id="video" autoplay></video>
       <canvas id="canvas"></canvas>
       ${this.hasPhoto ? html `
         <div class= "error-container">
@@ -75,9 +75,8 @@ export class VideoScreen extends LitElement {
             `
           )}
         </div>
-      ` : html`
-         <video id="video" autoplay></video>
-      `}
+      ` : ""  
+      }
       ` 
    }
 
