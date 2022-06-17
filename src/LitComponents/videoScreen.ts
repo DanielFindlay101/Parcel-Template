@@ -48,7 +48,7 @@ export class VideoScreen extends LitElement {
 
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: {
-      width: { ideal: 320 },
+      width: { ideal: 640 },
       facingMode: { exact: "environment"}}})
     .then(stream => {
       this.video.srcObject = stream
