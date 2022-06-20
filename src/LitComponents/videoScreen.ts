@@ -38,12 +38,16 @@ export class VideoScreen extends LitElement {
  }
 
  render() {  
-  // console.log(this.returnedData);
+
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
+    navigator.mediaDevices.getUserMedia({video: {
+      width: { ideal: 640 },
+      facingMode: "environment"}})
+    .then(stream => {
       this.video.srcObject = stream
       this.video.play()
     })
+    .catch(err => console.log(err))
   }
 
   return html` 
@@ -58,7 +62,7 @@ export class VideoScreen extends LitElement {
           )}
         </div>
       ` : html`
-         <video id="video" width="20px" height="20px" autoplay></video>
+         <video id="video" playsinline autoplay></video>
       `}
       ` 
    }
@@ -67,8 +71,13 @@ export class VideoScreen extends LitElement {
   this.hasPhoto = !this.hasPhoto
   const API_URL = 'https://emdev.smartenapps.com/defect-content/index.php'
   const ctx = this.canvas?.getContext('2d')
-  ctx.canvas.width = 400;
-  ctx.canvas.height = 300; 
+  //Use this for webcam
+  // ctx.canvas.width = 400;
+  // ctx.canvas.height = 300;
+
+  // Use this for devices
+  ctx.canvas.width = 390;
+  ctx.canvas.height = 520; 
   ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height)
   
   this.canvas.toBlob((blob) => {
