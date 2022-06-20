@@ -4,7 +4,7 @@ export const bottomBarStyles = css`
  .bottom-bar-container {
    background-color: white;
    width: 800px;
-   height: 3rem;
+   height: 3.5rem;
    border-radius: 25px;
    color: white;
    margin-top: 2rem;
@@ -17,7 +17,7 @@ export const bottomBarStyles = css`
    background-color: #df4753;
    color: #fff;
    width: 4rem;
-   height: 2rem;
+   height: 2.5rem;
    border: none;
    border-radius: 1rem;
    margin: auto 0.5rem;
@@ -29,7 +29,7 @@ export const bottomBarStyles = css`
  .btn-outline {
    background-color: white;
    width: 4rem;
-   height: 2rem;
+   height: 2.5rem;
    border: none;
    border-radius: 1rem;
    margin: auto 0.5rem;
