@@ -8,7 +8,9 @@ export const topBarStyles = css`
         border-radius: 25px;
         color: white;
         margin-top: 2rem;
+        padding-bottom: 5px;
         z-index: 100;
+        position: relative;
     }
     .title {
         padding-left: 20px;
@@ -16,8 +18,7 @@ export const topBarStyles = css`
     }
     .timer { 
         font-size: 0.8rem;
-        position: absolute;
-        left: 57px;
-        top: 63px;
+        padding-left: 20px;
+
     }
 `
