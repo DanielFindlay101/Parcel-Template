@@ -108,6 +108,7 @@ export class VideoScreen extends LitElement {
       console.log(this.returnedData)
       console.log(this.dataCoordinates)
       ctx.beginPath();
+      ctx.strokeStyle = '#df4753'
       ctx.rect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
         this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
