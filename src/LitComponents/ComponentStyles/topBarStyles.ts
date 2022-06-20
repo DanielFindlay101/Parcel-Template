@@ -16,7 +16,8 @@ export const topBarStyles = css`
     }
     .timer { 
         font-size: 0.8rem;
-        padding-left: 20px;
-        margin-bottom: 2px;
+        position: absolute;
+        left: 57px;
+        top: 63px;
     }
 `
