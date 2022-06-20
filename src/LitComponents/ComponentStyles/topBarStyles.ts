@@ -4,7 +4,7 @@ export const topBarStyles = css`
     .top-bar-container {
         background-color: #41415b;
         width: 800px;
-        height: 4rem;
+        height: 3rem;
         border-radius: 25px;
         color: white;
         margin-top: 2rem;
@@ -12,9 +12,10 @@ export const topBarStyles = css`
     }
     .title {
         padding-left: 20px;
-        font-size: 1rem;        
+        font-size: 0.8rem;        
     }
     .timer { 
+        font-size: 0.8rem;
         padding-left: 20px;
         margin-bottom: 2px;
     }

@@ -2,7 +2,8 @@ import { css } from 'lit'
 
 export const bottomBarStyles = css`
  .bottom-bar-container {
-   background-color: white;
+   /* background-color: white; */
+   background-color: transparent;
    width: 800px;
    height: 3.5rem;
    border-radius: 25px;
@@ -27,7 +28,8 @@ export const bottomBarStyles = css`
    cursor: pointer;
  }
  .btn-outline {
-   background-color: white;
+   /* background-color: white; */
+   background-color: transparent;
    width: 4rem;
    height: 2.5rem;
    border: none;
