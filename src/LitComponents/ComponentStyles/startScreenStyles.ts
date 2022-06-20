@@ -10,5 +10,6 @@ export const startScreenStyles = css`
     justify-content: center;
     align-items: center;
     border-radius: 30px;
-    }
+    text-align: center;
+ }
 `

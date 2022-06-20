@@ -9,7 +9,7 @@ export class StartScreen extends LitElement {
    protected render() {
      return html`
       <div class="main-container">
-        Please tap / click here to start
+        Please tap / click here to start.
       </div>
      `
    }
