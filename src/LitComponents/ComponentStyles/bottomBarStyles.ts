@@ -15,7 +15,8 @@ export const bottomBarStyles = css`
    z-index: 100;
   }
  .btn-snap {
-   background-color: #df4753;
+   /* background-color: #df4753; */
+   background-color: hsl(26, 92%, 55%);
    color: #fff;
    width: 4rem;
    height: 3.5rem;
@@ -24,7 +25,7 @@ export const bottomBarStyles = css`
    margin: auto 0.5rem;
   }
  .btn-snap:hover {
-   background-color: #ca3d49;
+   /* background-color: #ca3d49; */
    cursor: pointer;
  }
  .btn-outline {
@@ -41,4 +42,3 @@ export const bottomBarStyles = css`
    cursor: pointer;
  }
 `
-   
