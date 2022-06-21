@@ -12,7 +12,7 @@ export class MainScreen extends LitElement {
   static styles = mainScreenStyles
 
   @property()
-  hasClicked: boolean = true
+  hasClicked: boolean = false
 
     render() {
       return html `
@@ -29,6 +29,6 @@ export class MainScreen extends LitElement {
     }
 
   private _toggleClicked(){
-    //  this.hasClicked = !this.hasClicked
+     this.hasClicked = !this.hasClicked
   }
 }
