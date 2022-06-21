@@ -69,7 +69,7 @@ export const videoScreenStyles = css`
   text-align: center;
   font-family: sans-serif;
   padding: 1%;
-  height: 20%;
+  height: 25%;
   width: 20%;
   display: flex;
   align-items: center;
