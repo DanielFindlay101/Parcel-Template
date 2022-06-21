@@ -1,6 +1,3 @@
-// :root {
-//     --mainBg: bisque;
-// }
 .app-container {
     width: 100%;
     height: 100%;
@@ -10,31 +7,3 @@
     transition: padding .5s;
     border-radius: 30px;
 }
-
-// $text-color: chocolate;
-
-//     h1 {
-//         font-size: 4rem;
-//         text-align: center;
-//     }
-
-//     a {
-//         font-size: 2rem;
-//         color: saddlebrown;
-//         margin-bottom: 20px;
-//     }
-
-//     button {
-//         width: auto;
-//         color: saddlebrown;
-//         background-color: #e2e2e2;
-//         border-radius: 10px;
-//         border-style: none;
-//         border: 3px solid $text-color;
-        
-//         &:hover {
-//             background-color: hsl(0, 69%, 17%);
-//             color: #e2e2e2;
-//         }
-//     }
-// }
