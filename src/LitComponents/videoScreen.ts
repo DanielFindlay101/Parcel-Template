@@ -115,19 +115,22 @@ export class VideoScreen extends LitElement {
         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
         this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
 
-      ctx.fillStyle="rgba(187, 187, 187, 0.5)";
-      ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
-        this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
-        this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
-      ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 50, this.dataCoordinates[0] * this.canvas.height + 5,
-        this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
-        this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
-      ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 35,
-        this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
-        this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
-      ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 50, this.dataCoordinates[0] * this.canvas.height + 35,
-        this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
-        this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
+      ctx.fillStyle="rgba(187, 187, 187, 1)";
+      ctx.fillRect((this.dataCoordinates[1] * this.canvas.width) , this.dataCoordinates[0] * this.canvas.height,
+        (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
+        (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
+      // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height + 5,
+      //   this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
+      //   this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
+      // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 50, this.dataCoordinates[0] * this.canvas.height + 5,
+      //   this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
+      //   this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
+      // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 35,
+      //   this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
+      //   this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
+      // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 50, this.dataCoordinates[0] * this.canvas.height + 35,
+      //   this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width - 55,
+      //   this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height - 40);
       ctx.stroke();
       })
     .catch(error => console.log(error))
