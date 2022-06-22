@@ -120,7 +120,7 @@ export class VideoScreen extends LitElement {
         (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
         (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
 
-      ctx.fillRect(this.dataCoordinates[3] * this.canvas.width - 50, this.dataCoordinates[0] * this.canvas.height + 5,
+      ctx.fillRect(this.dataCoordinates[3] * this.canvas.width - 5, this.dataCoordinates[0] * this.canvas.height + 5,
         (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
         (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
       // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 35,
