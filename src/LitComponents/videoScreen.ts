@@ -79,12 +79,12 @@ export class VideoScreen extends LitElement {
   const ctx = this.canvas?.getContext('2d')
 
   // //Use this for webcam
-  // ctx.canvas.width = 400;
-  // ctx.canvas.height = 300;
+  ctx.canvas.width = 400;
+  ctx.canvas.height = 300;
 
   //Use this for devices
-  ctx.canvas.width = 390;
-  ctx.canvas.height = 520; 
+  // ctx.canvas.width = 390;
+  // ctx.canvas.height = 520; 
   ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height)
   
   this.canvas.toBlob((blob) => {
@@ -108,7 +108,7 @@ export class VideoScreen extends LitElement {
         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
         this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
 
-      ctx.fillStyle="rgba(187, 187, 187, 0.8)";
+      ctx.fillStyle="rgba(255, 255, 255, 0.3)";
       ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
         (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
         (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
