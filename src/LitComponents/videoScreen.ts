@@ -46,13 +46,6 @@ export class VideoScreen extends LitElement {
 
  render() {  
 
-
-  // if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  //   navigator.mediaDevices.getUserMedia({video: true}).then(stream => {
-  //     this.video.srcObject = stream
-  //     this.video.play()
-  //   })
-  // }
   if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
     navigator.mediaDevices.getUserMedia({video: {
       width: { ideal: 640 },
@@ -108,14 +101,14 @@ export class VideoScreen extends LitElement {
       console.log(this.returnedData)
       console.log(this.dataCoordinates)
       ctx.beginPath();
-      ctx.fillStyle = "rgba(255, 255, 255, 0.5)"
+      ctx.fillStyle = "rgba(223, 71, 83, 0.3)"
 
       //Draw Window onto canvas
       ctx.fillRect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
         this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
 
-      ctx.fillStyle="rgba(187, 187, 187, 0.5)";
+      ctx.fillStyle="rgba(187, 187, 187, 0.8)";
       ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
         (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
         (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
