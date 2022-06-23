@@ -110,7 +110,7 @@ export class VideoScreen extends LitElement {
         this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
         this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
 
-      ctx.fillStyle="rgba(255, 255, 255, 0.3)";
+      ctx.fillStyle="rgba(255, 255, 255, 0.5)";
       ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
         (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
         (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
@@ -129,7 +129,7 @@ export class VideoScreen extends LitElement {
         (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
         (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
         (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-      ctx.stroke();
+      // ctx.stroke();
       }
 
       if(this.returnedData.includes("Door")){
@@ -141,30 +141,14 @@ export class VideoScreen extends LitElement {
           this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
 
         ctx.fillStyle="rgba(255, 255, 255, 0.3)";
-        ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 10, this.dataCoordinates[0] * this.canvas.height + 10,
+        ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 15, this.dataCoordinates[0] * this.canvas.height + 10,
           (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.2,
           (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.9);
 
-        ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.2)) - 10,
+        ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.2)) - 15,
            this.dataCoordinates[0] * this.canvas.height + 10,
           (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.2,
           (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.9);
-
-        // ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4)) - 5,
-        //   this.dataCoordinates[0] * this.canvas.height + 5,
-        //    (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
-        //    (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-   
-        // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5,
-        //    (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
-        //    (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
-        //    (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-   
-        // ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4)) - 5,
-        //    (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
-        //    (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.4,
-        //    (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-        // ctx.stroke();
       }
     })
 
