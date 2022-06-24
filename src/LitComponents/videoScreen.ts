@@ -97,7 +97,7 @@ export class VideoScreen extends LitElement {
     .then(data => { 
       this.dataCoordinates = data.replace(/[^0-9,.]/g, '').split(",").slice(0, 4)
       this.returnedData = data.replace(/[^A-Za-z*' ']/g, '').split("*")
-      // console.log(this.returnedData)
+      console.log(this.returnedData)
       // console.log(this.dataCoordinates)
       if(this.returnedData.includes("Window")){
         this._drawWindow()
@@ -122,29 +122,34 @@ export class VideoScreen extends LitElement {
   //Draw Window onto canvas
   ctx.beginPath();
   ctx.fillStyle = "rgba(0, 128, 0, 0.3)"
-  ctx.fillRect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
+  ctx.strokeStyle = "rgba(0, 0, 0, 0.3)"
+  ctx.lineWidth = 2
+  ctx.rect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
   this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
   this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height);
+  ctx.fill()
+  ctx.stroke()
   
-  ctx.fillStyle="rgba(255, 255, 255, 0.5)";
-  ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
-  (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-  (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
+  //Window panels
+  // ctx.fillStyle="rgba(255, 255, 255, 0.5)";
+  // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
+  // (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
+  // (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
   
-  ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42)) - 5,
-  this.dataCoordinates[0] * this.canvas.height + 5,
-  (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-  (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
+  // ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42)) - 5,
+  // this.dataCoordinates[0] * this.canvas.height + 5,
+  // (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
+  // (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
   
-  ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5,
-  (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
-  (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-  (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
+  // ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5,
+  // (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
+  // (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
+  // (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
   
-  ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42)) - 5,
-  (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
-  (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-  (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
+  // ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42)) - 5,
+  // (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
+  // (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
+  // (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
  }
 
  private _drawDoor(){
