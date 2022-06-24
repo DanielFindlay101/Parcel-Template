@@ -122,7 +122,7 @@ export class VideoScreen extends LitElement {
   //Draw Window onto canvas
   ctx.beginPath();
   ctx.fillStyle = "rgba(0, 128, 0, 0.3)"
-  ctx.strokeStyle = "rgba(0, 0, 0, 0.3)"
+  ctx.strokeStyle = "rgba(0, 0, 0, 0.6)"
   ctx.lineWidth = 2
   ctx.rect(this.dataCoordinates[1] * this.canvas.width, this.dataCoordinates[0] * this.canvas.height,
   this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width,
