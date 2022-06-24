@@ -57,7 +57,7 @@ export class VideoScreen extends LitElement {
         <div class= "error-container">
           ${map(this.returnedData, (actualData) => 
             html`
-             <span class="detect-pill">${actualData}</span>
+             <span class="detect-pill">${actualData} Detected</span>
             `
           )}
         </div>

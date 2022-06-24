@@ -54,7 +54,7 @@ export const videoScreenStyles = css`
   z-index: 99;
 }
 .detect-pill {
-  background-color: rgb(65, 65, 91);
+  background-color: hsl(26, 92%, 55%);
   color: white;
   border-radius: 0.5rem;
   text-align: center;
