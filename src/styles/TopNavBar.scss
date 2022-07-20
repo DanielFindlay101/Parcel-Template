@@ -1,0 +1,21 @@
+
+.top-nav{
+    background-color: hsl(232, 50%, 55%);
+    width: 100%;
+    height: 20%;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+}
+
+h2{
+    font-size: large;
+    font-weight: 500;
+}

@@ -1,42 +1,7 @@
-:root {
-    --mainBg: bisque;
-}
-
-$text-color: chocolate;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 body {
+    height: 100%;
     margin: 0;
-    height: 100vh;
-    font-family: sans-serif;
-    background: var(--mainBg);
-    color: $text-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    h1 {
-        font-size: 4rem;
-        text-align: center;
-    }
-
-    a {
-        font-size: 2rem;
-        color: saddlebrown;
-        margin-bottom: 20px;
-    }
-
-    button {
-        width: auto;
-        color: saddlebrown;
-        background-color: #e2e2e2;
-        border-radius: 10px;
-        border-style: none;
-        border: 3px solid $text-color;
-        
-        &:hover {
-            background-color: hsl(0, 69%, 17%);
-            color: #e2e2e2;
-        }
-    }
+    font-family: 'Poppins';
 }
