@@ -83,17 +83,17 @@ export class VideoScreen extends LitElement {
 		const ctx = this.canvas?.getContext("2d");
 
 		// //Use this for webcam
-		// ctx.canvas.width = 400;
-		// ctx.canvas.height = 300;
+		ctx.canvas.width = 400;
+		ctx.canvas.height = 300;
 
 		//Use this for devices
-		ctx.canvas.width = 390;
-		ctx.canvas.height = 520;
+		// ctx.canvas.width = 390;
+		// ctx.canvas.height = 520;
 		ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
 
 		this.canvas.toBlob((blob) => {
 			const formData = new FormData();
-			formData.append("file", blob, "file");
+			formData.append("file", blob);
 			fetch(API_URL, {
 				method: "POST",
 				body: formData,
