@@ -83,8 +83,8 @@ export class VideoScreen extends LitElement {
 		const ctx = this.canvas?.getContext("2d");
 
 		// //Use this for webcam
-		ctx.canvas.width = 400;
-		ctx.canvas.height = 300;
+		// ctx.canvas.width = 400;
+		// ctx.canvas.height = 300;
 
 		//Use this for devices
 		ctx.canvas.width = 390;
