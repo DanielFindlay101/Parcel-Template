@@ -132,12 +132,12 @@ export class VideoScreen extends LitElement {
 		ctx.fillStyle = "rgba(0, 128, 0, 0.3)";
 		ctx.strokeStyle = "rgba(0, 0, 0, 0.6)";
 		ctx.lineWidth = 2;
-		ctx.rect(
-			this.dataCoordinates[0],
-			this.dataCoordinates[1],
-			this.dataCoordinates[2] - this.canvas.width,
-			this.dataCoordinates[3] - this.canvas.height
-		);
+		// ctx.rect(
+		// 	// this.dataCoordinates[0],
+		// 	// this.dataCoordinates[1],
+		// 	// this.dataCoordinates[2] - this.canvas.width,
+		// 	// this.dataCoordinates[3] - this.canvas.height
+		// );
 		ctx.fill();
 		ctx.stroke();
 
