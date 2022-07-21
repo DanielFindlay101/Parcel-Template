@@ -15,6 +15,9 @@ export class VideoScreen extends LitElement {
 	@property()
 	dataCoordinates: any;
 
+	@property()
+	dataName: any;
+
 	@query("#canvas")
 	canvas!: HTMLCanvasElement;
 
@@ -64,13 +67,7 @@ export class VideoScreen extends LitElement {
 			${this.hasPhoto
 				? html`
 						<div class="error-container">
-							${map(
-								this.returnedData,
-								(actualData) =>
-									html`
-										<span class="detect-pill">${actualData} Detected</span>
-									`
-							)}
+							<span class="detect-pill">${this.dataName} Detected</span>
 						</div>
 				  `
 				: html` <video id="video" autoplay playsinline></video> `}
@@ -101,6 +98,8 @@ export class VideoScreen extends LitElement {
 				.then((response) => response.json())
 				.then((data) => {
 					console.log(data);
+					this.dataName = data.classes.replace(/[^A-Za-z*' ']/g, "");
+					console.log(this.dataName);
 					this.dataCoordinates = data.bboxes
 						.replace(/[^1-9, ]/g, "")
 						.split(",");
@@ -109,7 +108,7 @@ export class VideoScreen extends LitElement {
 					if (data.classes.includes("Door")) {
 						this._drawDoor();
 					}
-					if (data.classes.includes("Windows")) {
+					if (data.classes.includes("Window")) {
 						this._drawWindow();
 					}
 				})
@@ -125,42 +124,19 @@ export class VideoScreen extends LitElement {
 	}
 
 	private _drawWindow() {
-		console.log("WINDOW");
 		const ctx = this.canvas?.getContext("2d");
 		//Draw Window onto canvas
 		ctx.beginPath();
 		ctx.fillStyle = "rgba(0, 128, 0, 0.3)";
 		ctx.strokeStyle = "rgba(0, 0, 0, 0.6)";
 		ctx.lineWidth = 2;
-		// ctx.rect(
-		// 	// this.dataCoordinates[0],
-		// 	// this.dataCoordinates[1],
-		// 	// this.dataCoordinates[2] - this.canvas.width,
-		// 	// this.dataCoordinates[3] - this.canvas.height
-		// );
+		ctx.moveTo(this.dataCoordinates[0], this.dataCoordinates[1]),
+			ctx.lineTo(this.dataCoordinates[2], this.dataCoordinates[3]),
+			ctx.lineTo(this.dataCoordinates[4], this.dataCoordinates[5]),
+			ctx.lineTo(this.dataCoordinates[6], this.dataCoordinates[7]),
+			ctx.closePath();
 		ctx.fill();
 		ctx.stroke();
-
-		//Window panels
-		// ctx.fillStyle="rgba(255, 255, 255, 0.5)";
-		// ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5, this.dataCoordinates[0] * this.canvas.height + 5,
-		// (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-		// (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-
-		// ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42)) - 5,
-		// this.dataCoordinates[0] * this.canvas.height + 5,
-		// (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-		// (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-
-		// ctx.fillRect(this.dataCoordinates[1] * this.canvas.width + 5,
-		// (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
-		// (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-		// (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
-
-		// ctx.fillRect((this.dataCoordinates[3] * this.canvas.width - ((this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42)) - 5,
-		// (this.dataCoordinates[2] * this.canvas.height - (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4) - 5,
-		// (this.dataCoordinates[3] * this.canvas.width - this.dataCoordinates[1] * this.canvas.width) * 0.42,
-		// (this.dataCoordinates[2] * this.canvas.height - this.dataCoordinates[0] * this.canvas.height) * 0.4);
 	}
 
 	private _drawDoor() {
@@ -169,46 +145,13 @@ export class VideoScreen extends LitElement {
 		//Draw door onto canvas
 		ctx.beginPath();
 		ctx.fillStyle = "rgba(223, 71, 83, 0.5)";
-		ctx.fillRect(
-			this.dataCoordinates[0],
-			this.dataCoordinates[1],
-			this.dataCoordinates[2] - this.dataCoordinates[0],
-			this.dataCoordinates[7] - this.dataCoordinates[1]
-
-			// this.dataCoordinates[1] * this.canvas.width,
-			// this.dataCoordinates[0] * this.canvas.height,
-			// this.dataCoordinates[3] * this.canvas.width -
-			// 	this.dataCoordinates[1] * this.canvas.width,
-			// this.dataCoordinates[2] * this.canvas.height -
-			// 	this.dataCoordinates[0] * this.canvas.height
-		);
-
-		// ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
-		// ctx.fillRect(
-		// 	this.dataCoordinates[1] * this.canvas.width + 15,
-		// 	this.dataCoordinates[0] * this.canvas.height + 10,
-		// 	(this.dataCoordinates[3] * this.canvas.width -
-		// 		this.dataCoordinates[1] * this.canvas.width) *
-		// 		0.2,
-		// 	(this.dataCoordinates[2] * this.canvas.height -
-		// 		this.dataCoordinates[0] * this.canvas.height) *
-		// 		0.9
-		// );
-
-		// ctx.fillRect(
-		// 	this.dataCoordinates[3] * this.canvas.width -
-		// 		(this.dataCoordinates[3] * this.canvas.width -
-		// 			this.dataCoordinates[1] * this.canvas.width) *
-		// 			0.2 -
-		// 		15,
-		// 	this.dataCoordinates[0] * this.canvas.height + 10,
-		// 	(this.dataCoordinates[3] * this.canvas.width -
-		// 		this.dataCoordinates[1] * this.canvas.width) *
-		// 		0.2,
-		// 	(this.dataCoordinates[2] * this.canvas.height -
-		// 		this.dataCoordinates[0] * this.canvas.height) *
-		// 		0.9
-		// );
+		ctx.moveTo(this.dataCoordinates[0], this.dataCoordinates[1]),
+			ctx.lineTo(this.dataCoordinates[2], this.dataCoordinates[3]),
+			ctx.lineTo(this.dataCoordinates[4], this.dataCoordinates[5]),
+			ctx.lineTo(this.dataCoordinates[6], this.dataCoordinates[7]),
+			ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
 	}
 }
 
