@@ -76,7 +76,7 @@ export class VideoScreen extends LitElement {
 
 	private _takePhoto() {
 		this.hasPhoto = !this.hasPhoto;
-		const API_URL = "/api/process";
+		const API_URL = `/api/process`;
 		const ctx = this.canvas?.getContext("2d");
 
 		// //Use this for webcam
