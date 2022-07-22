@@ -76,7 +76,7 @@ export class VideoScreen extends LitElement {
 
 	private _takePhoto() {
 		this.hasPhoto = !this.hasPhoto;
-		const API_URL = "http://82.4.26.118:5000/process";
+		const API_URL = "api/process";
 		const ctx = this.canvas?.getContext("2d");
 
 		// //Use this for webcam
@@ -91,7 +91,7 @@ export class VideoScreen extends LitElement {
 		this.canvas.toBlob((blob) => {
 			const formData = new FormData();
 			formData.append("file", blob, "file");
-			fetch("api/process", {
+			fetch(API_URL, {
 				method: "POST",
 				body: formData,
 			})
