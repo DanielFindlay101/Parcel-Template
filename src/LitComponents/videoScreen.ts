@@ -91,7 +91,7 @@ export class VideoScreen extends LitElement {
 		this.canvas.toBlob((blob) => {
 			const formData = new FormData();
 			formData.append("file", blob, "file");
-			fetch(API_URL, {
+			fetch("api/process", {
 				method: "POST",
 				body: formData,
 			})
