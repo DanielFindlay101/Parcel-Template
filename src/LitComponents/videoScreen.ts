@@ -79,7 +79,7 @@ export class VideoScreen extends LitElement {
 		const API_URL = `http://82.4.26.118:5000/process`;
 		const ctx = this.canvas?.getContext("2d");
 
-		// //Use this for webcam
+		//Use this for webcam
 		ctx.canvas.width = 400;
 		ctx.canvas.height = 300;
 
