@@ -2,6 +2,10 @@ import { LitElement, html } from "lit";
 import { customElement, query, property, state } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
 import { videoScreenStyles } from "./ComponentStyles/videoScreenStyles";
+<<<<<<< HEAD
+=======
+import { ReturnedData } from "../ReturnedData";
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
 import "./bottomBar";
 
 @customElement("video-screen")
@@ -14,6 +18,12 @@ export class VideoScreen extends LitElement {
 	@property()
 	dataCoordinates: any;
 
+<<<<<<< HEAD
+=======
+	@property()
+	dataName: any;
+
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
 	@query("#canvas")
 	canvas!: HTMLCanvasElement;
 
@@ -63,6 +73,7 @@ export class VideoScreen extends LitElement {
 			${this.hasPhoto
 				? html`
 						<div class="error-container">
+<<<<<<< HEAD
 							${map(
 								this.returnedData,
 								(actualData) =>
@@ -70,6 +81,9 @@ export class VideoScreen extends LitElement {
 										<span class="detect-pill">${actualData} Detected</span>
 									`
 							)}
+=======
+							<span class="detect-pill">${this.dataName} Detected</span>
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
 						</div>
 				  `
 				: html` <video id="video" autoplay playsinline></video> `}
@@ -78,6 +92,7 @@ export class VideoScreen extends LitElement {
 
 	private _takePhoto() {
 		this.hasPhoto = !this.hasPhoto;
+<<<<<<< HEAD
 		const API_URL = "http://82.4.26.118:5000/process";
 		const ctx = this.canvas?.getContext("2d");
 
@@ -88,15 +103,32 @@ export class VideoScreen extends LitElement {
 		//Use this for devices
 		ctx.canvas.width = 390;
 		ctx.canvas.height = 520;
+=======
+		const API_URL = `http://82.4.26.118:5000/process`;
+		const ctx = this.canvas?.getContext("2d");
+
+		//Use this for webcam
+		ctx.canvas.width = 400;
+		ctx.canvas.height = 300;
+
+		//Use this for devices
+		// ctx.canvas.width = 390;
+		// ctx.canvas.height = 520;
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
 		ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
 
 		this.canvas.toBlob((blob) => {
 			const formData = new FormData();
+<<<<<<< HEAD
 			formData.append("file", blob);
+=======
+			formData.append("file", blob, "file");
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
 			fetch(API_URL, {
 				method: "POST",
 				body: formData,
 			})
+<<<<<<< HEAD
 				.then((response) => response.text())
 				.then((data) => {
 					this.dataCoordinates = data
@@ -112,6 +144,24 @@ export class VideoScreen extends LitElement {
 					if (this.returnedData.includes("Door")) {
 						this._drawDoor();
 					}
+=======
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					this.dataName = data.classes.replace(/[^A-Za-z*' ']/g, "");
+					console.log(this.dataName);
+					this.dataCoordinates = data.bboxes
+						.replace(/[^1-9, ]/g, "")
+						.split(",");
+					console.log(this.dataCoordinates);
+
+					if (data.classes.includes("Door")) {
+						this._drawDoor();
+					}
+					if (data.classes.includes("Window")) {
+						this._drawWindow();
+					}
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
 				})
 				.catch((error) => console.log(error));
 		}, "image/jpeg");
@@ -131,6 +181,7 @@ export class VideoScreen extends LitElement {
 		ctx.fillStyle = "rgba(0, 128, 0, 0.3)";
 		ctx.strokeStyle = "rgba(0, 0, 0, 0.6)";
 		ctx.lineWidth = 2;
+<<<<<<< HEAD
 		ctx.rect(
 			this.dataCoordinates[1] * this.canvas.width,
 			this.dataCoordinates[0] * this.canvas.height,
@@ -206,3 +257,42 @@ export class VideoScreen extends LitElement {
 		);
 	}
 }
+=======
+		ctx.moveTo(this.dataCoordinates[0], this.dataCoordinates[1]),
+			ctx.lineTo(this.dataCoordinates[2], this.dataCoordinates[3]),
+			ctx.lineTo(this.dataCoordinates[4], this.dataCoordinates[5]),
+			ctx.lineTo(this.dataCoordinates[6], this.dataCoordinates[7]),
+			ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
+	}
+
+	private _drawDoor() {
+		console.log("DOOR");
+		const ctx = this.canvas?.getContext("2d");
+		//Draw door onto canvas
+		ctx.beginPath();
+		ctx.fillStyle = "rgba(223, 71, 83, 0.5)";
+		ctx.moveTo(this.dataCoordinates[0], this.dataCoordinates[1]),
+			ctx.lineTo(this.dataCoordinates[2], this.dataCoordinates[3]),
+			ctx.lineTo(this.dataCoordinates[4], this.dataCoordinates[5]),
+			ctx.lineTo(this.dataCoordinates[6], this.dataCoordinates[7]),
+			ctx.closePath();
+		ctx.fill();
+		ctx.stroke();
+	}
+}
+
+// this.dataCoordinates = data
+// 	.replace(/[^0-9,.]/g, "")
+// 	.split(",")
+// 	.slice(0, 4);
+// this.returnedData = data.replace(/[^A-Za-z*' ']/g, "").split("*");
+// console.log(this.returnedData);
+// if (this.returnedData.includes("Window")) {
+// 	this._drawWindow();
+// }
+// if (this.returnedData.includes("Door")) {
+// 	this._drawDoor();
+// }
+>>>>>>> ca6075921adadb482b89956caa1b50bdcabc7010
