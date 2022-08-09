@@ -75,7 +75,7 @@ export class VideoScreen extends LitElement {
 
 	private _takePhoto() {
 		this.hasPhoto = !this.hasPhoto;
-		const API_URL = `http://82.4.26.118:5000/process`;
+		const API_URL = `https://imaging-api.fixzy.ai:5050/`;
 		const ctx = this.canvas?.getContext("2d");
 
 		//Use this for webcam
