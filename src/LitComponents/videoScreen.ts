@@ -77,8 +77,8 @@ export class VideoScreen extends LitElement {
 		// ctx.canvas.height = 300;
 
 		// Use this for devices
-		ctx.canvas.width = 390;
-		ctx.canvas.height = 520;
+		ctx.canvas.width = 400;
+		ctx.canvas.height = 500;
 		ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
 
 		this.canvas.toBlob((blob) => {
