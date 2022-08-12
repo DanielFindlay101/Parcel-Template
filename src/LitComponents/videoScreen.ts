@@ -77,17 +77,19 @@ export class VideoScreen extends LitElement {
 		this.hasPhoto = !this.hasPhoto;
 		const API_URL = `https://imaging-api.fixzy.ai:6001/process`;
 		const ctx = this.canvas?.getContext("2d");
-		const ratio = window.devicePixelRatio || 1;
-		const width = window.innerWidth * ratio;
-		const height = window.innerHeight * ratio;
+		// const ratio = window.devicePixelRatio || 1;
+		// const width = window.innerWidth * ratio;
+		// const height = window.innerHeight * ratio;
 
 		//Use this for webcam
 		// ctx.canvas.width = 400;
 		// ctx.canvas.height = 300;
 
 		//Use this for devices
-		ctx.canvas.width = width;
-		ctx.canvas.height = height;
+		ctx.canvas.width = 390;
+		ctx.canvas.height = 520;
+		// ctx.canvas.width = window.innerWidth;
+		// ctx.canvas.height = window.innerHeight;
 
 		ctx?.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
 
