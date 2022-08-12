@@ -60,9 +60,7 @@ export class VideoScreen extends LitElement {
 							${map(
 								this.returnedData,
 								(actualData) =>
-									html`
-										<span class="detect-pill">${actualData} Detected</span>
-									`
+									html` <span class="detect-pill">${actualData}</span> `
 							)}
 						</div>
 				  `
@@ -90,10 +88,13 @@ export class VideoScreen extends LitElement {
 				method: "POST",
 				body: formData,
 			})
-				.then((response) => response.text())
+				.then((response) => response.json())
 				.then((data) => {
-					this.returnedData = data.replace(/[^A-Za-z*]/g, " ").split("*");
-					console.log(this.returnedData);
+					console.log(data.classes);
+					this.returnedData = data.classes
+						.replace(/[^A-Za-z,]/g, " ")
+						.split(",");
+					// console.log(this.returnedData);
 				})
 				.catch((error) => console.log(error));
 		}, "image/jpeg");
